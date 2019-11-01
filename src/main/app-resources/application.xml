@@ -1,0 +1,21 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="application">
+  <jobTemplates>
+    <jobTemplate id="notebook">
+      <streamingExecutable>/application/notebook/run</streamingExecutable>
+      <defaultParameters><parameter id="regionOfInterest" title="WKT Polygon for the Region of Interest" abstract="Set the value of WKT Polygon" maxOccurs="1" scope="runtime" type="LiteralData">POLYGON ((-8.864205 38.88616500000001, -8.864205 38.986165, -8.964205000000002 38.986165, -8.964205000000002 38.88616500000001, -8.864205 38.88616500000001))</parameter><parameter id="nameOfRegion" title="Name of Region" abstract="Name of the region of interest" minOccurs="1" maxOccurs="1" scope="runtime" type="LiteralData">P001</parameter><parameter id="aggIndex" title="NDVI growing season statistics catalog index" abstract="index to access ndvi catalog" minOccurs="1" maxOccurs="1" scope="runtime" type="LiteralData">better-ext-02-03-02</parameter><parameter id="aggApikey" title="NDVI growing season statistics catalog apikey" abstract="apikey to access ndvi catalog" minOccurs="1" maxOccurs="1" scope="runtime" type="LiteralData"/></defaultParameters>
+     <defaultJobconf>
+        <property id="mapred.task.timeout">9900000000000</property>
+        <property id="ciop.job.max.tasks">1</property> 
+     </defaultJobconf>
+    </jobTemplate>
+  </jobTemplates>
+  <workflow id="ewf-ext-02-03-06" title="NDVI long term averages of growing season time series per parcel" abstract="NDVI long term averages of growing season time series per parcel">
+    <workflowVersion>1.0</workflowVersion>
+    <node id="notebook">
+      <job id="notebook"/>
+      <sources>
+        <source id="source" title="Input references" abstract="Input references" refid="string:list" scope="runtime">https://catalog.terradue.com/better-ext-02-03-02/search?format=atom&amp;uid=1608D8589ADB8738A4B1B65A765E6C026931ED66,https://catalog.terradue.com/better-ext-02-03-02/search?format=atom&amp;uid=C8BC17F8BB4A96FAF3692EB3BC19221FAF91E9C6,https://catalog.terradue.com/better-ext-02-03-02/search?format=atom&amp;uid=499A739958D194BC7ED19AB251191C1316001624</source>
+      </sources>
+    </node>
+  </workflow>
+</application>
