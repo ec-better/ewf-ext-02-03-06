@@ -11,7 +11,7 @@
     <version>2.0.0</version>
   </parent>
   <description>NDVI long term averages of growing season time series per parcel</description>
-  <version>0.4</version>
+  <version>0.5</version>
   <properties>
     <summary>NDVI long term averages of growing season time series per parcel</summary>
     <description>NDVI long term averages of growing season time series per parcel</description>
